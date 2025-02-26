@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Computadores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestão de Computadores</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Seleção de Sala</h2>
+            <form id="form-sala">
+                <label for="sala">Selecione a Sala:</label>
+                <select id="sala" required>
+                    <option value="1.6">Sala 1.6</option>
+                    <option value="1.5">Sala 1.5</option>
+                    <option value="1.4">Sala 1.4</option>
+                    <option value="1.3">Sala 1.3</option>
+                </select>
+                
+                <button type="submit">Continuar</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("form-sala").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let salaSelecionada = document.getElementById("sala").value;
+            window.location.href = `sala${salaSelecionada}.html`;
+        });
+    </script>
+</body>
+</html>
+

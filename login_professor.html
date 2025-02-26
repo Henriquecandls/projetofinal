@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Computadores - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestão de Computadores</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Login de Professor</h2>
+            <form id="form-login" onsubmit="return logar();">
+                <label for="login">Nome:</label>
+                <input type="text" id="login" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="erro-login" style="color: red; display: none;">Nome ou senha incorretos. Tente novamente.</p>
+        </section>
+    </main>
+
+    <script>
+        function logar() {
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+            var erroMsg = document.getElementById('erro-login');
+
+            if (login === "123456as" && senha === "123456as") {
+                alert('Sucesso');
+                location.href = "computadores.html";
+                return false;
+            } else {
+                erroMsg.style.display = "block";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
